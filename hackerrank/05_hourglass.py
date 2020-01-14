@@ -1,4 +1,5 @@
 #!/bin/python3
+# link: https://hackerrank-challenge-pdfs.s3.amazonaws.com/13581-2d-array-English?AWSAccessKeyId=AKIAJ4WZFDFQTZRGO3QA&Expires=1578965346&Signature=19e%2BJPSO3SeBALOm91SR5B7ELDI%3D&response-content-disposition=inline%3B%20filename%3D2d-array-English.pdf&response-content-type=application%2Fpdf
 
 import math
 import random
