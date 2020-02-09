@@ -1,17 +1,13 @@
 def manipulate_generator(generator, n):
-    prime = False
     a = n+1
 
-    if a == 2:
-        next(g)
-        next(g)
-    else:
-        for i in range(2,n//2):
-            if a % i == 0:
-                prime = True
-                break
-        else:
+    if a > 2:
+        if all( a % i != 0 for i in range(2, n//2) ):
             next(g)
+    else:
+        next(g)
+        next(g)
+
 
 def positive_integers_generator():
     n = 1
