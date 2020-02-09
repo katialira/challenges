@@ -11,6 +11,7 @@ import sys
 # Explicación https://www.dropbox.com/s/unn8beeffk6l6zm/Screen%20Shot%202020-02-09%20at%2012.48.37.png?dl=0
 
 def countMeetings(arrival, departure):
+    # primer solución 
     meetings = []
     for m in range(len(arrival)):
         if arrival[m] not in meetings:
@@ -18,6 +19,7 @@ def countMeetings(arrival, departure):
         elif departure[m] not in meetings:
             meetings.append(departure[m])
 
+    # intento con list comp
     m = []
     a = [ m.append(i) for i in arrival if i not in m ]
     d = [ m.append(f) for f in departure if f not in m ]
