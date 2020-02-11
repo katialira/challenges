@@ -6,8 +6,6 @@ import random
 import re
 import sys
 
-a = 0
-
 def consumer():
     while True:
         x = yield
@@ -24,24 +22,26 @@ def rooter():
     # Receive one number
     # Yield the square root of that number
     # Take the floor after doing the square root of the input
-    n = (yield)
-    yield math.floor(math.sqrt(n))
+    n = yield
+    while True:
+        n = yield math.floor(math.sqrt(n))
 
 def squarer():
     # Receive one number
     # Yield the square of that number
-    n = (yield)
-    yield n*n
+    n = yield
+    while True:
+        n = (yield n*n)
 
 def accumulator():
     # Starts from zero
     # Receive one number
     # Add to the previously kept answer
-    global a
-    n = (yield)
-    a += n
-    yield a
-
+    t = 0
+    while True:
+        n = (yield t)
+        if n is not None:
+            t += n
 
 # Recibe
 # 1. Arreglo de operaciones [square, accumulate]
